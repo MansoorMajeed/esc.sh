@@ -35,6 +35,22 @@ style = "github-dark"
 [params.goatCounter]
 code = "esc"
 
+# Giscus comments
+[params.giscus] # https://giscus.app
+  repo = "MansoorMajeed/esc.sh"
+  repoID = "R_kgDOJmOhmg"
+  category = "Esc.sh Comments"
+  categoryID = "DIC_kwDOJmOhms4CWqw2"
+  mapping = "pathname"
+  term = ""
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "top"
+  theme = "preferred_color_scheme"
+  lang = "en"
+  loading = "lazy"
+
 
 [taxonomies]
   category = "categories"
