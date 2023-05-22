@@ -6,8 +6,6 @@ defaultcontentlanguage = "en"
 
 paginate = 20
 
-disqusShortname = "digitz"
-
 [markup.highlight]
 style = "github-dark"
 
