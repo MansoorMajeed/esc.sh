@@ -5,6 +5,12 @@ author: Mansoor
 date: 2023-05-20T22:32:37-04:00
 draft: false
 url: blog/ghost-blog-caching-in-cloudflare
+categories:
+- SelfHosting
+tags:
+- ghost
+- cloudflare
+- caching
 ---
 This is a quick post about how to enable HTTP caching in Cloudflare for your Ghost powered blog.
 

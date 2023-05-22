@@ -1,8 +1,6 @@
 ---
 author: Mansoor A
 categories:
-- Quick Notes
-- Ops
 - Kubernetes
 date: "2020-04-19T09:01:23Z"
 description: ""
@@ -10,15 +8,10 @@ draft: false
 image: https://cdn.esc.sh/2020/04/eks-service.png
 summary: How to properly do an http to https redirect while using an ELB for SSL termination
 tags:
-- Quick Notes
-- Ops
-- Kubernetes
+- EKS
 title: Redirect HTTP to HTTPS on EKS behind ELB without using ingress
 url: blog/redirect-http-to-https-on-eks-behind-elb
 ---
-
-
-
 
 ## The Problem
 

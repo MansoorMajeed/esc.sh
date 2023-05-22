@@ -1,8 +1,7 @@
 ---
 author: Mansoor A
 categories:
-- Letsencrypt
-- Ops
+- SelfHosting
 date: "2020-09-27T09:48:30Z"
 description: ""
 draft: false
@@ -10,7 +9,7 @@ image: https://cdn.esc.sh/2020/09/local_letsencrypt.png
 summary: Easily fetch let's encrypt SSL certificates for local domains
 tags:
 - Letsencrypt
-- Ops
+- TLS
 title: Let'sEncrypt for local domains
 url: blog/letsencrypt-ssl-for-local-domains
 ---

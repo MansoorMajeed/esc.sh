@@ -2,16 +2,16 @@
 author: Mansoor A
 categories:
 - Linux
-- Windows
+- WSL
 date: "2020-06-22T06:49:38Z"
 description: ""
 draft: false
 image: https://cdn.esc.sh/2020/06/blog-ssh-agent-1.PNG
-summary: How to get your ssh-agent to persist between terminal sessions - the reliable
-  way
+summary: How to get your ssh-agent to persist between terminal sessions - the reliable way
 tags:
-- Linux
+- WSL2
 - Windows
+- SSH
 title: Using SSH-Agent the right way in Windows 10/11 WSL2
 url: blog/ssh-agent-windows10-wsl2
 ---
@@ -27,13 +27,13 @@ Fortunately, it's pretty simple. `keychain` to the rescue.
 
 Install `keychain`
 
-```
+```bash
  sudo apt-get install keychain
 ```
 
 Edit your `~/.bashrc`, `~/.zshrc` or  whatever rc file that corresponds to your weird shell of choice (I'm not judging you) and add the following to the bottom of your file.
 
-```
+```bash
 # For Loading the SSH key
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
 source $HOME/.keychain/$HOST-sh
@@ -41,7 +41,7 @@ source $HOME/.keychain/$HOST-sh
 
 So, this is how my `~/.zshrc` looks like
 
-```
+```bash
 # For Loading the SSH key
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
 source $HOME/.keychain/LAPTOP-C9EO4ILB-sh

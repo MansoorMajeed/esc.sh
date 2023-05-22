@@ -2,7 +2,6 @@
 author: Mansoor A
 categories:
 - Kubernetes
-- HomePage
 date: "2020-01-10T00:07:00Z"
 description: ""
 draft: false
@@ -10,7 +9,8 @@ summary: How to setup the Nginx ingress controller in Google Kubernetes Engine t
   have better control over the controller
 tags:
 - Kubernetes
-- HomePage
+- GKE
+- Ingress
 title: Setting up Nginx Ingress in GKE
 url: blog/nginx-ingress-gke-setup
 ---

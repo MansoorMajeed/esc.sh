@@ -7,6 +7,11 @@ image: https://cdn.esc.sh/2020/09/nginx_jenkinst.png
 summary: Setting up a Jenkins server with Nginx Reverse Proxy and SSL
 title: Setting up Jenkins with Nginx reverse proxy and SSL - Debian
 url: blog/jenkins-nginx-ssl
+categories:
+- SelfHosting
+tags:
+- Jenkins
+- Nginx
 ---
 
 
@@ -26,21 +31,21 @@ sudo apt install default-jdk
 
 ## Step 2 - Add the GPG keys
 
-```
+```bash
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 ```
 
 ## Step 3 - Install the package
 
-```
+```bash
 sudo apt update
 sudo apt install jenkins
 ```
 
 ## Step 4 - Start and enable
 
-```
+```bash
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 ```
@@ -50,7 +55,7 @@ sudo systemctl start jenkins
 Visit `server-ip:8080`
 
 Jenkins generates a random password by default. Get the password:
-```
+```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 Paste this password into the field
@@ -67,7 +72,7 @@ You know how to fill a form. Create a user. From there it is pretty straight for
 ## Step 8 - Configuring Nginx reverse proxy
 
 ### Install Nginx
-```
+```bash
 sudo apt update
 sudo apt install nginx
 ```
@@ -76,7 +81,7 @@ sudo apt install nginx
 
 Change the domain name obviously
 
-```
+```nginx
 server {
     listen 80;
     server_name jenkins.devops.esc.sh;
@@ -93,7 +98,7 @@ server {
 ```
 ### Verify the config and restart nginx
 
-```
+```bash
 nginx -t
 sudo systemctl restart nginx
 ```
@@ -111,20 +116,20 @@ We can change this by editing
 
 Locate the line starting with `JENKINS_ARGS` (It's usually the last line) and append
 
-```
+```text
 --httpListenAddress=127.0.0.1
 ```
 So that the line resembles
-```
+```text
 JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT --httpListenAddress=127.0.0.1"
 ```
 
 Restart Jenkins
-```
+```bash
 sudo systemctl restart jenkins
 ```
 Make sure it is running fine
-```
+```bash
 sudo systemctl status jenkins
 ```
 
@@ -138,7 +143,7 @@ documents. Go [HERE](https://esc.sh/blog/lets-encrypt-and-nginx-definitive-guide
 Come back here after that.
 
 Make sure you have the certificate and key in location
-```
+```text
 root@jenkins-server:~# ls -l /etc/letsencrypt/live/jenkins.devops.esc.sh/
 total 4
 lrwxrwxrwx 1 root root  45 Sep 27 07:52 cert.pem -> ../../archive/jenkins.devops.esc.sh/cert1.pem
@@ -151,8 +156,7 @@ root@jenkins-server:~#
 
 
 Update the nginx config to look like this
-```
-
+```nginx
 server {
     listen 80;
     server_name jenkins.devops.esc.sh;
@@ -183,19 +187,15 @@ server {
 		proxy_redirect      http://localhost:8080 https://jenkins.devops.esc.sh;
 	}
 }
-
 ```
 
 Make sure nginx is alright `nginx -t`
 
 Reload Nginx
 
-```
+```bash
 sudo systemctl reload nginx
 ```
 
 And that is pretty much it, Jenkins is up and ready with a freshly configured sweet
 sweet green padlocked SSL certificate
-
-
-

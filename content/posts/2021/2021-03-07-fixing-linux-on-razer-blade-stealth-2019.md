@@ -29,7 +29,7 @@ We can use a simple script from [HERE](https://github.com/pimlie/ubuntu-mainline
 
 > Note: If you are installing a Kernel manually, you will have to disable secure boot in bios
 
-```
+```bash
 sudo apt install wget
 wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh
 chmod +x ubuntu-mainline-kernel.sh
@@ -37,7 +37,7 @@ chmod +x ubuntu-mainline-kernel.sh
 
 Now, to install the latest Kernel, simple run
 
-```
+```bash
 sudo ./ubuntu-mainline-kernel.sh -i
 ```
 
@@ -49,7 +49,7 @@ Once the Kernel is installed, simply reboot
 
 To fix suspend, we need to add a Kernel parameter
 
-```
+```bash
 button.lid_init_state=open
 ```
 
@@ -61,13 +61,13 @@ Edit `/etc/default/grub` as root (You can use your favourite text editor). If yo
 
 Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and add the parameter there. Your line should look like this now (Make sure it is a single line with no line break)
 
-```
+```text
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash button.lid_init_state=open"
 ```
 
 And update grub using
 
-```
+```bash
 sudo update-grub
 ```
 
@@ -77,13 +77,13 @@ sudo update-grub
 
 Find your loader configuration. For example, Pop OS! conf path is
 
-```
+```text
 /boot/efi/loader/entries/Pop_OS-current.conf
 ```
 
 Edit the file and find the line that starts with `options` and add the parameter to the end of the line. It should look like this after adding the entry
 
-```
+```text
 options root=UUID=350fc3dc-9ed1-440d-9a8f-922ee8c6511f ro quiet loglevel=0 systemd.show_status=false splash button.lid_init_state=open
 ```
 
@@ -91,11 +91,8 @@ options root=UUID=350fc3dc-9ed1-440d-9a8f-922ee8c6511f ro quiet loglevel=0 syste
 
 Create a new file at `/etc/modprobe.md/blacklist-nvidia.conf` with the content
 
-```
+```text
 blacklist i2c_nvidia_gpu
 ```
 
-
-
 Reboot. Things should work now
-

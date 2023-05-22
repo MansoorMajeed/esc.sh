@@ -1,8 +1,7 @@
 ---
 author: Mansoor A
 categories:
-- Quick Notes
-- Ops
+- Linux
 date: "2020-04-19T09:27:56Z"
 description: ""
 draft: false
@@ -10,8 +9,8 @@ image: https://cdn.esc.sh/2020/04/iptables.png
 summary: A quick hack to block specific DNS queries like metadata.google.internal
   coming to a VPN server
 tags:
-- Quick Notes
-- Ops
+- IPTables
+- Firewall
 title: Blocking specific DNS queries in a VPN using iptables
 url: blog/blocking-specific-dns-queries-using-iptables
 ---
@@ -29,7 +28,7 @@ One of the hack that I was successful in implementing was to use iptables to red
 
 Here is the rule:
 
-```
+```bash
 iptables -t nat -A PREROUTING -i tun0 -p udp --dport 53 -m string --hex-string "|08|metadata|06|google|08|internal|" --algo bm -j DNAT --to-destination 8.8.8.8:53
 ```
 

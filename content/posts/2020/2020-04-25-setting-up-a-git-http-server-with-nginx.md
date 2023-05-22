@@ -1,16 +1,14 @@
 ---
 author: Mansoor A
 categories:
-- SRE
-- Ops
+- SelfHosting
 date: "2020-04-25T06:53:55Z"
 description: ""
 draft: false
 image: https://cdn.esc.sh/2020/04/git-http.png
 summary: How to easily setup a git http server using nginx and git-smart-http
 tags:
-- SRE
-- Ops
+- Git
 title: Setting up a Git HTTP server with Nginx
 url: blog/setting-up-a-git-http-server-with-nginx
 ---

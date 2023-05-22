@@ -24,7 +24,7 @@ It used to work, but not sure if it works on the new machines.
 
 Open a terminal and run
 
-```
+```bash
 defaults write -g com.apple.mouse.scaling -integer -1
 ```
 
