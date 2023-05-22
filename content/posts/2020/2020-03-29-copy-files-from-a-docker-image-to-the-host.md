@@ -2,8 +2,6 @@
 author: Mansoor A
 categories:
 - Docker
-- Ops
-- Quick Notes
 date: "2020-03-29T14:01:45Z"
 description: ""
 draft: false
@@ -11,8 +9,6 @@ image: https://cdn.esc.sh/2020/03/docker.png
 summary: 'A quick way of copying files stored in a docker image to the host system '
 tags:
 - Docker
-- Ops
-- Quick Notes
 title: Copy files from a Docker image to the host
 url: blog/copy-files-from-a-docker-image-to-the-host
 ---

@@ -2,14 +2,14 @@
 author: Mansoor A
 categories:
 - Linux
-- ThinkPad-E14
+- Hardware
 date: "2021-03-06T04:10:28Z"
 description: ""
 draft: false
 summary: The function keys on the new ThinkPad E14 AMD does not work on Linux. It
   works only after a suspend
 tags:
-- Linux
+- ThinkPad
 - ThinkPad-E14
 title: ThinkPad E-14 AMD Function Keys not working
 url: blog/thinkpad-e-14-fn-key
@@ -24,13 +24,13 @@ So, reading about the issue I came to know that the function keys starts working
 
 Open your crontab
 
-```
+```bash
 sudo crontab -e
 ```
 
 This will ask you to choose your favourite text editor, choose the one that you know. Add the following to the end of the file
 
-```
+```bash
 # Fn key fix
 @reboot sudo rtcwake -m mem -s 2
 ```

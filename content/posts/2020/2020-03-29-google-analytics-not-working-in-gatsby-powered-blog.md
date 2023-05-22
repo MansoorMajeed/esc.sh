@@ -3,7 +3,6 @@ author: Mansoor A
 categories:
 - Blogging
 - Gatsby
-- HomePage
 date: "2020-03-29T13:42:24Z"
 description: ""
 draft: false

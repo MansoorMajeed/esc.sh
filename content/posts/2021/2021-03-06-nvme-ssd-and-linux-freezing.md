@@ -24,7 +24,7 @@ I recently got a ThinkPad E14 AMD Ryzen 5 that came with 256GB NVME SSD soldered
 
 The laptop freezes randomly and spits out these error messages
 
-```
+```text
 { 206.681465] EXT4-fs error (device dm-4) in ext4 free. inode:355: IO failure
 { 206.775200] EXT4-fs error (device dm-4): ext4_wait_block_bitmap:520@: comm cheese:cs0: Cannot read block bitmap - block_group = 38, block_bitmap = 1048582
 { 206.775410] EXT4-fs error (device dm-4): ext4_discard_preallocations:4090: comm cheese:cs0: Error -5 reading block bitmap for 38
@@ -44,7 +44,7 @@ And there is not much to do there other than hard rebooting the laptop.
 
 I stumbled upon [THIS](https://bugzilla.kernel.org/show_bug.cgi?id=208123) bug report and it had the same issue. The suggestion was to try and disable APST. So I added the following to the kernel boot parameter
 
-```
+```text
 nvme_core.default_ps_max_latency_us=5500
 ```
 
@@ -58,13 +58,13 @@ Edit `/etc/default/grub` as root (You can use your favourite text editor). If yo
 
 Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and add the parameter there. Your line should look like this now (Make sure it is a single line with no line break)
 
-```
+```text
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvme_core.default_ps_max_latency_us=5500"
 ```
 
 And update grub using
 
-```
+```text
 sudo update-grub
 ```
 
@@ -74,13 +74,13 @@ sudo update-grub
 
 Find your loader configuration. For example, Pop OS! conf path is
 
-```
+```text
 /boot/efi/loader/entries/Pop_OS-current.conf
 ```
 
 Edit the file and find the line that starts with `options` and add the parameter to the end of the line. It should look like this after adding the entry
 
-```
+```text
 options root=UUID=350fc3dc-9ed1-440d-9a8f-922ee8c6511f ro quiet loglevel=0 systemd.show_status=false splash nvme_core.default_ps_max_latency_us=5500
 ```
 
@@ -94,12 +94,8 @@ Although it works with these Kernel parameters, we are adjusting the power setti
 
 Some of these threads are talking about the same thing
 
-```
 https://www.reddit.com/r/pop_os/comments/g8y3ae/experiencing_random_freezes_after_installing_new/
-
-
 https://askubuntu.com/questions/1126456/wd-sandisk-nvme-m-2-stick-not-quite-working
-```
 
 
 

@@ -7,6 +7,8 @@ lastmod: 2023-05-10T22:32:37-04:00
 lastmod: 2022-08-03T22:32:37-04:00
 draft: false
 url: blog/switch-git-branches-fzf
+categories:
+- CLI
 images: []
 ---
 I have a very handy shell alias (a shortcut in the terminal) that allows me to easily switch between my most recent Git branches using fzf

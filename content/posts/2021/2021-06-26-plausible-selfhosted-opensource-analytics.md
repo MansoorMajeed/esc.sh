@@ -5,6 +5,8 @@ date: 2021-06-26T19:03:00+05:30
 lastmod: 2021-06-26T19:03:00+05:30
 draft: false
 images: []
+categories:
+- SelfHosting
 url: blog/plausible-analytics-selfhosting
 ---
 I've been trying to get rid of Google analytics and use a self hosted solution instead and I finally

@@ -31,7 +31,7 @@ sudo apt install imwheel
 
 Create a file `~/.imwheelrc`. You can use your favourite text editor for it.
 
-```
+```text
 ".*"
 None,      Up,   Button4, 3
 None,      Down, Button5, 3
@@ -49,7 +49,7 @@ And that's it
 
 You can manually start/restart imwheel using the command
 
-```
+```bash
 imwheel -kill
 ```
 

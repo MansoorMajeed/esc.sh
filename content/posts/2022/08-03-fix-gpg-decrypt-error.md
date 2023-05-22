@@ -6,6 +6,8 @@ date: 2022-08-03T22:32:37-04:00
 lastmod: 2022-08-03T22:32:37-04:00
 draft: false
 url: blog/gpg-error-inappopriate-ioctl-for-device
+categories:
+- Fixes
 images: []
 ---
 

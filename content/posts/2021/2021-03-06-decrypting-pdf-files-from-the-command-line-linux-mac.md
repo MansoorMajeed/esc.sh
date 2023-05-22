@@ -29,14 +29,14 @@ Sometimes you need to mass decrypt PDF files (Telephone bill comes to mind). Ope
 
 Make sure you have homebrew installed. If not, go [HERE](https://brew.sh/)
 
-```
+```bash
 brew install qpdf
 
 ```
 
 **On Linux**
 
-```
+```bash
 sudo apt install qpdf
 ```
 
@@ -44,7 +44,7 @@ sudo apt install qpdf
 
 **To decrypt a single file**
 
-```
+```bash
 qpdf --password=yourpass --decrypt input.pdf output.pdf
 ```
 
@@ -52,7 +52,7 @@ qpdf --password=yourpass --decrypt input.pdf output.pdf
 
 For this, keep all your pdf files that needs to be decrypted into a single directory, and then from that directory, do:
 
-```
+```bash
 mkdir decrypted
 
 for i in `ls *.pdf`;do qpdf --password=yourpassword --decrypt $i decrypted/$i;done
@@ -62,7 +62,7 @@ This will put all the decrypted PDFs in the directory `decrypted`
 
 **Take only one page from the PDF**
 
-```
+```bash
 for i in `ls *.pdf`;do qpdf --password=<pdf password> --decrypt --pages . 1 --  $i decrypted/$i;done
 ```
 

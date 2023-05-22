@@ -5,6 +5,10 @@ description: ""
 draft: false
 title: Installing MineCraft server on Debian 10
 url: blog/installing-minecraft-server-on-debian-10
+categories:
+- SelfHosting
+tags:
+- Minecraft
 ---
 ## The Problem
 
@@ -49,19 +53,19 @@ Run `java -version` to verify that it has installed correctly
 Go [HERE](https://www.minecraft.net/en-us/download/server) and get the latest download link.
 
 In my case:
-```
+```bash
 wget https://launcher.mojang.com/v1/objects/0a269b5f2c5b93b1712d0f5dc43b6182b9ab254e/server.jar
 ```
 
 Once downloaded, run it using
-```
+```bash
 java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
 
 Now, this should complain that you need to accept the EULA. There should be a file `eula.txt` in the same directory.
 Edit it using a text editor `vim eula.txt`
 
-```
+```bash
 eula=true
 ```
 Save the file and close the editor
@@ -72,17 +76,17 @@ You can directly start it, but it is better to start it in a screen/tmux session
 if you get disconnected from the server
 
 Install Tmux
-```
+```bash
 sudo apt install tmux
 ```
 
 Start a new Tmux session
-```
+```bash
 tmux new -s minecraft
 ```
 
 Start the Minecraft server
-```
+```bash
 java -Xmx1024M -Xms1024M -jar server.jar nogui
 ```
 

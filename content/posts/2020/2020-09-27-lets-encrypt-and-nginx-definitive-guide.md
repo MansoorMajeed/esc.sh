@@ -1,8 +1,7 @@
 ---
 author: Mansoor A
 categories:
-- Nginx
-- Letsencrypt
+- SelfHosting
 date: "2020-09-27T09:17:48Z"
 description: ""
 draft: false
