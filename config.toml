@@ -1,0 +1,95 @@
+baseurl = "https://esc.sh"
+title = "Esc.sh"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+disqusShortname = "digitz"
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Mansoor"
+  info = "Site Reliability Engineer"
+  description = "Mansoor's personal website"
+  keywords = "blog,sre,devops,personal"
+  avatarurl = "images/avatar.jpg"
+
+  favicon_32 = "images/favicon.png"
+# favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2012
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[params.goatCounter]
+code = "esc"
+
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/mansoormajeed/"
+
+[[params.social]]
+  name = "YouTube"
+  icon = "fa fa-youtube fa-2x"
+  weight = 1
+  url = "https://www.youtube.com/@esc-sh/"
+
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 1
+  url = "https://www.linkedin.com/in/mansoormajeed/"
+
+
+
+# Menu links
+[[menu.main]]
+  name = "DevopsFromScratch"
+  weight = 100
+  url = "projects/devops-from-scratch/"
+
+[[menu.main]]
+  name = "Projects"
+  weight = 200
+  url = "projects/"
+
+[[menu.main]]
+  name = "Blog"
+  weight = 300
+  url  = "blog/"
+
+
+[[menu.main]]
+  name = "Travel"
+  weight = 700
+  url  = "travel/"
+
+[[menu.main]]
+  name = "About"
+  weight = 1000
+  url = "about/"
+
+
+
+
