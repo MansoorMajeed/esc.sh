@@ -118,7 +118,7 @@ Once you have configured proper TTL, click `Deploy`, this will activate the cach
 If you are familiar with the command line and if you have `curl` installed, you can check if your blog is getting
 cached by using the following command
 
-```
+```bash
 ➜  ~ curl -vso /dev/null https://your web site address/ 2>&1 | grep -i age:
 < age: 2859
 ```
