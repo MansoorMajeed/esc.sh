@@ -22,12 +22,11 @@ Recently, I was in a situation where I had a few hundred clients reading from a 
 sudo apt-get install nginx git fcgiwrap apache2-utils -y
 ```
 
-```text
-nginx: is needed as the webserver
-git: well, git. 
-fcgiwrap: will be our interface to the git-http-backend
-apache2-utils: is needed to generate the password hash for authentication
-```
+- `nginx`: is needed as the webserver
+- `git`: well, git. 
+- `fcgiwrap`: will be our interface to the git-http-backend
+- `apache2-utils`: is needed to generate the password hash for authentication
+
 
 ## Configure the repository
 
