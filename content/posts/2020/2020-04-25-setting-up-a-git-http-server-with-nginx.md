@@ -18,11 +18,11 @@ Recently, I was in a situation where I had a few hundred clients reading from a 
 
 ## Install the required packages
 
-```
+```bash
 sudo apt-get install nginx git fcgiwrap apache2-utils -y
 ```
 
-```
+```text
 nginx: is needed as the webserver
 git: well, git. 
 fcgiwrap: will be our interface to the git-http-backend
@@ -61,14 +61,14 @@ Navigate to your repository `/srv/git/repo1` and edit the file `config` in your 
 
 Add the following entry to the /`srv/git/repo1/config` file
 
-```
+```text
 [http]
     receivepack = true
 ```
 
 This is how my `/srv/git/repo1/config` file look like
 
-```
+```text
 root@debian:~# cat /srv/git/repo1/config
 [core]
         repositoryformatversion = 0
