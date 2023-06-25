@@ -36,20 +36,20 @@ pointed to it. The domain in this case is `jenkins.devops.esc.sh`
 
 Assuming you are using a Debian virtual machine
 
-```
+```bash
 sudo apt install certbot python4-certbot-nginx
 ```
 
 ### Step 2 - Fetch certificate using DNS challenge
 
-```
+```bash
 certbot -d your-domain.com --manual --preferred-challenges dns-01 certonly
 ```
 
 this will put you in a prompt like below
 Press Y for the question of logging the IP address.
 
-```
+```text
 root@jenkins-server:~# certbot -d jenkins.devops.esc.sh --manual --preferred-challenges dns-01 certonly
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator manual, Installer None
@@ -83,7 +83,7 @@ so I have added it like this
 
 And in `dig` it should show up like this
 
-```
+```bash
 ➜  ~ dig _acme-challenge.jenkins.devops.esc.sh TXT +short
 "2xdgemNwApJ6OGVkFlAJFk0PB2h45m_J9C_I55IywLA"
 ➜  ~

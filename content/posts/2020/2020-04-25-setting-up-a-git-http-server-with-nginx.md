@@ -18,16 +18,15 @@ Recently, I was in a situation where I had a few hundred clients reading from a 
 
 ## Install the required packages
 
-```
+```bash
 sudo apt-get install nginx git fcgiwrap apache2-utils -y
 ```
 
-```
-nginx: is needed as the webserver
-git: well, git. 
-fcgiwrap: will be our interface to the git-http-backend
-apache2-utils: is needed to generate the password hash for authentication
-```
+- `nginx`: is needed as the webserver
+- `git`: well, git. 
+- `fcgiwrap`: will be our interface to the git-http-backend
+- `apache2-utils`: is needed to generate the password hash for authentication
+
 
 ## Configure the repository
 
@@ -37,18 +36,12 @@ Create the directory where you want to store the repositories.
 sudo mkdir /srv/git
 ```
 
-Make sure nginx has proper permissions to this directory
-
-```bash
-sudo chown -R www-data. /srv/git
-```
-
 Let's create our repository, let's call it `repo1`
 
 ```bash
-sudo cd /srv/git
+cd /srv/git
 sudo mkdir repo1
-sudo cd repo1
+cd repo1
 sudo git init . --bare --shared 
 sudo git update-server-info
 ```
@@ -57,18 +50,18 @@ sudo git update-server-info
 
 By default the service that is used for git push (receivepack) is disabled, meaning you won't be able to push to the repository via http. Let's enable that
 
-Navigate to your repository `/srv/git/repo1` and edit the file `config` in your favourite text editor (I mean vim. If you prefer emacs, stop reading and go somewhere else. If you prefer nano, you can stay ;) )
+Navigate to your repository `/srv/git/repo1` and edit the file `config` in your favourite text editor
 
-Add the following entry to the /`srv/git/repo1/config` file
+Add the following entry to the `/srv/git/repo1/config` file
 
-```
+```text
 [http]
     receivepack = true
 ```
 
 This is how my `/srv/git/repo1/config` file look like
 
-```
+```text
 root@debian:~# cat /srv/git/repo1/config
 [core]
         repositoryformatversion = 0
@@ -85,11 +78,10 @@ root@debian:~#
 Once that is done, run the following commands for the changes to take effect (Obviously, these commands needs to be run from the repository on the server)
 
 ```bash
-git config --bool core.bare true
-git reset --hard
+sudo git config --bool core.bare true
 ```
 
-Let's set the permissions once again
+Let's set the permissions so that the directory is owned by Nginx (here, www-data is the user under which Nginx is running)
 
 ```bash
 sudo chown -R www-data:www-data /srv/git
@@ -150,12 +142,12 @@ If you did something wrong, Nginx won't be shy to pointing it out. Fix it before
 
 ```bash
 # Make sure these services start on boot
-sudo systtemctl enable fcgiwrap
-sudo systtemctl enable nginx
+sudo systemctl enable fcgiwrap
+sudo systemctl enable nginx
 
 # Start them now
-sudo systtemctl start fcgiwrap
-sudo systtemctl start nginx
+sudo systemctl start fcgiwrap
+sudo systemctl start nginx
 ```
 
 ## Let's test it
