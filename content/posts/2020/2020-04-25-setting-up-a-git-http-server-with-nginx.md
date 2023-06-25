@@ -36,12 +36,6 @@ Create the directory where you want to store the repositories.
 sudo mkdir /srv/git
 ```
 
-Make sure nginx has proper permissions to this directory
-
-```bash
-sudo chown -R www-data. /srv/git
-```
-
 Let's create our repository, let's call it `repo1`
 
 ```bash
@@ -87,7 +81,7 @@ Once that is done, run the following commands for the changes to take effect (Ob
 sudo git config --bool core.bare true
 ```
 
-Let's set the permissions once again
+Let's set the permissions so that the directory is owned by Nginx (here, www-data is the user under which Nginx is running)
 
 ```bash
 sudo chown -R www-data:www-data /srv/git
