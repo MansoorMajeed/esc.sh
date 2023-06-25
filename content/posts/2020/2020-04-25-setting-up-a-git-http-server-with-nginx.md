@@ -45,9 +45,9 @@ sudo chown -R www-data. /srv/git
 Let's create our repository, let's call it `repo1`
 
 ```bash
-sudo cd /srv/git
+cd /srv/git
 sudo mkdir repo1
-sudo cd repo1
+cd repo1
 sudo git init . --bare --shared 
 sudo git update-server-info
 ```
@@ -56,9 +56,9 @@ sudo git update-server-info
 
 By default the service that is used for git push (receivepack) is disabled, meaning you won't be able to push to the repository via http. Let's enable that
 
-Navigate to your repository `/srv/git/repo1` and edit the file `config` in your favourite text editor (I mean vim. If you prefer emacs, stop reading and go somewhere else. If you prefer nano, you can stay ;) )
+Navigate to your repository `/srv/git/repo1` and edit the file `config` in your favourite text editor
 
-Add the following entry to the /`srv/git/repo1/config` file
+Add the following entry to the `/srv/git/repo1/config` file
 
 ```text
 [http]
@@ -84,8 +84,7 @@ root@debian:~#
 Once that is done, run the following commands for the changes to take effect (Obviously, these commands needs to be run from the repository on the server)
 
 ```bash
-git config --bool core.bare true
-git reset --hard
+sudo git config --bool core.bare true
 ```
 
 Let's set the permissions once again
@@ -149,12 +148,12 @@ If you did something wrong, Nginx won't be shy to pointing it out. Fix it before
 
 ```bash
 # Make sure these services start on boot
-sudo systtemctl enable fcgiwrap
-sudo systtemctl enable nginx
+sudo systemctl enable fcgiwrap
+sudo systemctl enable nginx
 
 # Start them now
-sudo systtemctl start fcgiwrap
-sudo systtemctl start nginx
+sudo systemctl start fcgiwrap
+sudo systemctl start nginx
 ```
 
 ## Let's test it
