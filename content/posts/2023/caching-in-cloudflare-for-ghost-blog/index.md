@@ -54,7 +54,7 @@ So add an entry like this
 This is my final config file look like (with some redactions of course)
 ```json
 {
-    "url": "https://digitz.org",
+    "url": "https://example.com",
     "database": {
     --snip--
     },
