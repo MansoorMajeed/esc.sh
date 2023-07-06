@@ -9,6 +9,13 @@ paginate = 20
 [markup.highlight]
 style = "github-dark"
 
+
+# This is needed to add raw html to markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
   author = "Mansoor"
   info = "Site Reliability Engineer"
