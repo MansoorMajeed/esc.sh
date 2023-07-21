@@ -20,6 +20,11 @@ url: blog/ssh-agent-windows10-wsl2
 
 If you use `ssh-agent` with an encrypted ssh key, or use it for agent forwarding, you may have come to realize that even though you started an agent session using `eval $(ssh-agent -s)` it does not persist when you open a new terminal window. It does not even work with a new tmux window or pane.
 
+> Note: Dropping my DigitalOcean referral link, if you would like to support me
+<div align="center">
+    <a href="https://www.digitalocean.com/?refcode=b63c500f6bcd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" /></a>
+</div>
+
 # The Solution
 
 Fortunately, it's pretty simple. `keychain` to the rescue.
@@ -30,7 +35,10 @@ Install `keychain`
  sudo apt-get install keychain
 ```
 
-Edit your `~/.bashrc`, `~/.zshrc` or  whatever rc file that corresponds to your weird shell of choice (I'm not judging you) and add the following to the bottom of your file.
+Edit your `~/.bashrc`, `~/.zshrc` or  whatever rc file that corresponds to your shell of choice and add the following to the bottom of your file. 
+
+> Note: If you are not sure which shell you are using,you can run the command `echo $SHELL`
+> and it will show you whether you are using BASH or ZSH
 
 ```bash
 # For Loading the SSH key
@@ -46,9 +54,4 @@ So, this is how my `~/.zshrc` looks like
 source $HOME/.keychain/LAPTOP-C9EO4ILB-sh
 ```
 
-And that is all. When you open a new shell, it will ask you to enter the password for your ssh key, and then onwards it will greet you with this sweet screen saying that `keychain` took care of loading your ssh-key
-
-{{< figure src="https://cdn.esc.sh/2020/06/blog-ssh-agent-2.png" >}}
-
-> Please note that this above screen won't show up if you used the `-q` option with keychain
-
+And that is all. When you open a new shell, it will ask you to enter the password for your ssh key, and then onwards `keychain` takes care of loading your ssh-key
