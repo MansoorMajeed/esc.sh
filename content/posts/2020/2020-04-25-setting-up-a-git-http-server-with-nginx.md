@@ -16,6 +16,20 @@ url: blog/setting-up-a-git-http-server-with-nginx
 
 Recently, I was in a situation where I had a few hundred clients reading from a git repository simultaneously. The default git over ssh was painfully for my use case and I started looking for git over http. This is how I was able to make it work with `Nginx` and `git-smart-http`
 
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1248832399622229"
+     crossorigin="anonymous"></script>
+<!-- horizontal-single -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1248832399622229"
+     data-ad-slot="3176086117"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ## Install the required packages
 
 ```bash
