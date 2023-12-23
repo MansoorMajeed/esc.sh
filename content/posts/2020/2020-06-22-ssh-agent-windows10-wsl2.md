@@ -20,10 +20,18 @@ url: blog/ssh-agent-windows10-wsl2
 
 If you use `ssh-agent` with an encrypted ssh key, or use it for agent forwarding, you may have come to realize that even though you started an agent session using `eval $(ssh-agent -s)` it does not persist when you open a new terminal window. It does not even work with a new tmux window or pane.
 
-> Note: Dropping my DigitalOcean referral link, if you would like to support me
-<div align="center">
-    <a href="https://www.digitalocean.com/?refcode=b63c500f6bcd&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" /></a>
-</div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1248832399622229"
+     crossorigin="anonymous"></script>
+<!-- horizontal-single -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1248832399622229"
+     data-ad-slot="3176086117"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 # The Solution
 
