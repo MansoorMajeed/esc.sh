@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<ul>
+    {{ range .Pages.ByDate.Reverse }}
+    <li>
+        <h2>{{ .Title }}</h2>
+        <img src="{{ .Params.image }}" alt="{{ .Description }}">
+        <p>{{ .Description }}</p>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
