@@ -12,7 +12,7 @@ url: blog/fix-ugly-fonts-in-fedora
 I've been using Linux Mint 17.3 for some time, and then Ubuntu 16.04 was released. I have this problem, you know,
 like, if there is any distro release, I have to install it and use it. Be it Linux Mint, Ubuntu, Fedora, or whatever. 
 
-So I installed Ubuntu 16.04. It was nice, for a while, then came quite a lot of bugs ( It's an LTS release for God's sake ).  
+So I installed Ubuntu 16.04. It was nice for a while, then came quite a lot of bugs ( It's an LTS release for God's sake ).  
 So I ditched Ubuntu and decided to go back to Fedora 23 KDE. And I did. 
 
 Fedora is awesome. I mean, so many people underestimate Fedora and the work done by the good people at RedHat and the Fedora devs. 
@@ -27,8 +27,8 @@ I did spend a lot of time trying to fix this poor font rendering and I was able 
 
 ### How to Fix poor font rendering
 
-*Step 1* : Open a terminal and install the `freetype-freeworld` package
-```
+Open a terminal and install the `freetype-freeworld` package
+```bash
 sudo dnf install freetype-freeworld
 ```
 
@@ -36,14 +36,14 @@ If you get any error like "package not found", you need to install the RPMFusion
 
 ### Install RPMFusion Repository 
 
-*This is for Fedora 21 and above*
-```
+
+```bash
 su -c 'dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 ```
 
 Once the Repository is installed, install the package as mentioned in Step 1
 
-*Step 2* : Now that you have installed the required package, open the file `/etc/fonts/local.conf` using your favourite text editor and paste the following content into it, and save the file.
+Now that you have installed the required package, open the file `/etc/fonts/local.conf` using your favourite text editor and paste the following content into it, and save the file.
 
 
 ```xml
@@ -107,9 +107,7 @@ Once the Repository is installed, install the package as mentioned in Step 1
 </fontconfig>
 ```
 
-*Step 3* : Reboot! 
+
+**Reboot!**
 
 Once you login again, you should be greeted with a better renderd font. Have fun.
-
-
-
