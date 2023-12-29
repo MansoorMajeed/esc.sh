@@ -5,7 +5,8 @@ author: Mansoor
 date: 2023-12-27T22:32:37-04:00
 lastmod: 2023-12-27T22:32:37-04:00
 draft: true
-url: blog/exposing-selfhosted-services
+url: blog/selfhosting/exposing-services
+categories: ["SelfHosting"]
 images: []
 ---
 
@@ -16,20 +17,10 @@ on a daily basis. I also use the same laptop to host some internet facing servic
 it should be accessible to everyone on the internet. And this is the setup I came up with
 which seem to be a good tradeoff between cost, complexity and security.
 
-## How I Expose my services to the Internet
-
-TL;DR : I have a Cloud virtual machine running Nginx that acts as a reverse proxy. I have a Wireguard
-server on the Cloud VM. My ThinkPad laptop connects to this CloudVM via Wireguard. The Nginx reverse
-proxies directly to the VPN interface. I use Docker to run all of the services
-
-Here is a simplified diagram showing how it fits together
-![SelfHosting Setup Diagram](selfhosting-setup.png)
-
-In this post, I will explain how to do this and the pros and cons of different ways of exposing services to the internet.
-
-First let us address the common ways to expose a service to the Internet
-
 ## Common ways to expose a service to the Internet
+
+First let us address some of the common ways to expose a service to the Internet
+
 
 ### Port Forwarding
 
@@ -69,22 +60,25 @@ While using a VPN is not directly exposing a service to the internet, I'm mentio
 Services like Cloudflare Tunnel and Ngrok offer easy ways to expose your local services to the internet. 
 
 
-Pros:
+**Pros**:
+- Very easy to setup
+- Secure
 
-Cons:
+**Cons**:
+- Thirdparty services, less flexibility
 
 
+**My advice**: If you want a fairly easy setup, but are willing to trade privacy and flexibility, I suggest [Cloudflare tunnel](https://www.cloudflare.com/products/tunnel/)
 
-## Is there an easy option
 
-https://www.cloudflare.com/products/tunnel/
+## How I Expose my services to the Internet
 
-## Other options
+TL;DR : I have a Cloud virtual machine running Nginx that acts as a reverse proxy. I have a Wireguard
+server on the Cloud VM. My ThinkPad laptop connects to this CloudVM via Wireguard. The Nginx reverse
+proxies directly to the VPN interface. I use Docker to run all of the services
 
-Port Forwarding and dynamic DNS
+Here is a simplified diagram showing how it fits together
 
-VPN server
+![SelfHosting Setup Diagram](selfhosting-setup.png)
 
-Tailscale
-
-Wireguard VPN 
+In this post, I will explain how to do this and the pros and cons of different ways of exposing services to the internet.
