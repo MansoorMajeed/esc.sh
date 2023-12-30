@@ -5,7 +5,7 @@ author: Mansoor
 date: 2023-12-27T22:32:37-04:00
 lastmod: 2023-12-27T22:32:37-04:00
 draft: true
-url: blog/selfhosting/exposing-services
+url: blog/selfhosting/how-i-expose-local-services-to-internet
 categories: ["SelfHosting"]
 images: []
 ---
@@ -69,7 +69,8 @@ Services like Cloudflare Tunnel and Ngrok offer easy ways to expose your local s
 
 
 **My advice**: If you want a fairly easy setup, but are willing to trade privacy and flexibility, I suggest [Cloudflare tunnel](https://www.cloudflare.com/products/tunnel/)
-
+But if you are willing to put a little bit  more effort, I suggest you try the method
+I use, which is explained below.
 
 ## How I Expose my services to the Internet
 
@@ -81,4 +82,50 @@ Here is a simplified diagram showing how it fits together
 
 ![SelfHosting Setup Diagram](selfhosting-setup.png)
 
-In this post, I will explain how to do this and the pros and cons of different ways of exposing services to the internet.
+**Pros**:
+- Secure
+- Very flexible
+- Private
+- Does not depend on a third party
+- It's fun
+
+**Cons**:
+- You gotta pay $5 a month at least
+- A bit more involve setup
+
+## How to set it up
+
+For this example, I will use my laptop to host a simple web service and then I will
+use my Digital Ocean VM to expose it to the internet, with SSL and everything.
+You can replicate the same example with slight modifications for any sort of service.
+
+### Step 1 : Let's host a simple service locally
+
+I have a simple demo app [HERE](https://github.com/MansoorMajeed/go-hello-world), I am going to use that.
+
+I assume you have Docker setup and running, if not, it does not matter how you host your service,
+it just have to be listening on a local port.
+
+In my case, I am going to start my demo application
+
+```bash
+docker run -p 8080:8080 mansoor1/go-hello-world
+```
+Once that is running, from the same machine (in my case it is my laptop), I can access this service
+```
+➜  ~ curl localhost:8080
+Hello from: dc886e373e2b
+Current Time: Sat, 30 Dec 2023 21:21:16 UTC
+```
+
+Great! So we have our service running locally
+
+### Step 2 : Setting up our CloudVM
+
+For this, you will need a Cloud VM. I personally recommend DigitalOcean or Linode.
+We only need the smallest possible instance since the server will be using only
+minimal stuff. You can even sign up for a AWS free account or Google Cloud trial.
+
+For this, I will  use a DigitalOcean VM I already have.
+
+
