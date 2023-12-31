@@ -14,7 +14,7 @@ images: []
 
 I have an old ThinkPad laptop running Debian 12 that is hosting some services that I use
 on a daily basis. I also use the same laptop to host some internet facing services. That is,
-it should be accessible to everyone on the internet. And this is the setup I came up with
+these services should be accessible to **everyone on the internet**. And this is the setup I came up with
 which seem to be a good tradeoff between cost, complexity and security.
 
 ## Common ways to expose a service to the Internet
@@ -106,16 +106,16 @@ I have a simple demo app [HERE](https://github.com/MansoorMajeed/go-hello-world)
 I assume you have Docker setup and running, if not, it does not matter how you host your service,
 it just have to be listening on a local port.
 
-In my case, I am going to start my demo application
+In my case, I am going to install Docker on a Virtual Machine and start the service from there.
 
 ```bash
 docker run -p 8080:8080 mansoor1/go-hello-world
 ```
-Once that is running, from the same machine (in my case it is my laptop), I can access this service
+Once that is running, from the same machine, I can access this service
 ```
-➜  ~ curl localhost:8080
-Hello from: dc886e373e2b
-Current Time: Sat, 30 Dec 2023 21:21:16 UTC
+mansoor@debian:~$ curl localhost:8080
+Hello from: 228c90c9b4c0
+Current Time: Sun, 31 Dec 2023 03:03:50 UTC
 ```
 
 Great! So we have our service running locally
@@ -128,4 +128,9 @@ minimal stuff. You can even sign up for a AWS free account or Google Cloud trial
 
 For this, I will  use a DigitalOcean VM I already have.
 
+In case you are not familiar with this, I have an old video explaining how to set it up from scratch
+
+[![Watch video](https://img.youtube.com/vi/kDcn9npjoPs/0.jpg)](https://www.youtube.com/watch?v=kDcn9npjoPs&list=PLxYCgfC5WpnsAg5LddfjlidAHJNqRUN14&index=16)
+
+At this point, you should have a Cloud VM running with nginx installed.
 
