@@ -14,3 +14,5 @@ aiming at people who are completely new to DevOps and did not have a clear direc
 [YouTube Full Playlist](https://www.youtube.com/playlist?list=PLxYCgfC5WpnsAg5LddfjlidAHJNqRUN14)  
 [Github Repo with Notes](https://github.com/mansoormajeed/devops-from-scratch)  
 [Reddit Post](https://www.reddit.com/r/devops/comments/hne5q0/getting_into_devops_as_a_beginner_is_tricky_my_50/)
+
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="esc.sh" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>

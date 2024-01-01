@@ -17,5 +17,6 @@ If you would like to get in touch with me, check the following Links
 * [LinkedIn](https://www.linkedin.com/in/mansoormajeed/)
 * [Twitter](https://twitter.com/esc_sh)
 
-If you prefer to send an email instead, you can reach me at [m@esc.sh]
+If you prefer to send an email instead, you can reach me at `m@esc.sh`
 
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="esc.sh" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>

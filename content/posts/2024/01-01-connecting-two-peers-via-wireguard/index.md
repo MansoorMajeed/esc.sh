@@ -6,6 +6,7 @@ date: 2024-01-01T10:32:37-04:00
 lastmod: 2024-01-01T10:32:37-04:00
 draft: false
 url: blog/wireguard-vpn-setup
+categories: ["SelfHosting"]
 images: []
 ---
 In this post, I will show you how we can connect two peers (any two servers/instances) via Wireguard.
