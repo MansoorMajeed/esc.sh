@@ -3,6 +3,7 @@ author: Mansoor A
 categories:
 - Google Cloud
 - HomePage
+- SelfHosting
 date: "2017-08-05T00:07:00Z"
 description: ""
 draft: false

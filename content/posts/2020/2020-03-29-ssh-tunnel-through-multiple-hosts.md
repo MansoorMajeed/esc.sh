@@ -2,6 +2,7 @@
 author: Mansoor A
 categories:
 - Ops
+- SelfHosting
 date: "2020-03-29T09:26:46Z"
 description: ""
 draft: false

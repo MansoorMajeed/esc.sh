@@ -15,7 +15,7 @@ url: blog/redirect-http-to-https-on-eks-behind-elb
 
 ## The Problem
 
-If you have a service in AWS that is frontend by an Elastic Load Balancer (ELB) (let the backend be EKS or plain EC2 VMs) with SSL certificates from ACM. Now, the SSL termination happens at the ELB itself. Meaning, from the ELB to the backend the communication is through HTTP.
+If you have a service in AWS that is fronted by an Elastic Load Balancer (ELB) (let the backend be EKS or plain EC2 VMs) with SSL certificates from ACM. Now, the SSL termination happens at the ELB itself. Meaning, from the ELB to the backend the communication is through HTTP.
 
 > Note: This post is assuming that your backend is fronted by an Nginx. Whether in EC2 or EKS.
 
