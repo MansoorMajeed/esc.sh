@@ -5,7 +5,7 @@ author: Mansoor
 date: 2024-01-02T07:32:37-04:00
 lastmod: 2024-01-02T07:32:37-04:00
 draft: false
-url: blog/how-i-expose-local-services-to-internet
+url: blog/expose-selfhosted-services-to-internet
 categories: ["SelfHosting"]
 images: []
 ---
