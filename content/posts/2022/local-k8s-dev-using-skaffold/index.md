@@ -6,6 +6,7 @@ date: 2022-10-04T11:28:46-04:00
 lastmod: 2022-10-04T11:28:46-04:00
 draft: false
 url: blog/local-development-on-kubernetes-using-skaffold/
+categories: ["Kubernetes"]
 ---
 ## What is Skaffold
 

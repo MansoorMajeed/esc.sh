@@ -86,6 +86,12 @@ code = "esc"
 
 # Menu links
 [[menu.main]]
+  name = "Self Hosting"
+  weight = 50
+  url = "/selfhosting"
+
+
+[[menu.main]]
   name = "DevopsFromScratch"
   weight = 100
   url = "projects/devops-from-scratch/"
