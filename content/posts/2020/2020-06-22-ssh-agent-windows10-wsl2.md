@@ -38,7 +38,7 @@ Edit your `~/.bashrc`, `~/.zshrc` or  whatever rc file that corresponds to your 
 ```bash
 # For Loading the SSH key
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
-source $HOME/.keychain/$HOST-sh
+source $HOME/.keychain/$(hostname)-sh
 ```
 
 So, this is how my `~/.zshrc` looks like
