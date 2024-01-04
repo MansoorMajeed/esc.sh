@@ -309,6 +309,26 @@ We are ready to test if our setup is working. Open a browser (or `curl`) to the 
 
 ![Demo](./exposed-service.png)
 
+### Step 8 : Optional - Making it even more secure
+
+If you are connecting from the local machine directly to the remote server, that means
+the remote server has full network access to your local machine for all the services that
+are listening on the host. This is totally fine unless someone gains access to your remote server (Cloud VM).
+
+We can go a step futher and make it even more secure. 
+
+This is what I would do:
+- Create a single Docker network for all my services that needs to be exposed to the internet
+- The same network will also run a wireguard client container that can connect to  the Wireguard server
+- Using a docker-compose.yaml would be the best option, take a look [here for an example](https://github.com/linuxserver/docker-wireguard?tab=readme-ov-file#docker-compose-recommended-click-here-for-more-info)
+
+This way, even the worst case scenario where your remote Cloud VM gets hacked, they will
+only be able to get network access to this docker network that is housing a bunch of private
+facing services
+
+Another thing you can consider is to  use a dedicated VM for all of your private facing
+services, and connect via Wireguard from that dedicated VM. This is similar to the docker
+approach, just that it is a VM instead of Containers.
 
 ## Conclusion
 
@@ -317,3 +337,4 @@ It would make sense to add some sort of simple monitoring to make sure that your
 service stays up. 
 
 Leave a comment if you have any questions
+
