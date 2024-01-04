@@ -30,3 +30,10 @@ You can find all the self hosting blog posts : [/categories/selfhosting/](/categ
 ### CI/CD
 
 - [Jenkins with Nginx and SSL](/blog/jenkins-nginx-ssl/)
+
+### VPN, Exposing Services
+
+- [Setting up WireGuard VPN](/blog/wireguard-vpn-setup/)
+- [How I expose my services to the Internet](/blog/expose-selfhosted-services-to-internet/)
+
+  
