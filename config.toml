@@ -25,6 +25,9 @@ style = "github-dark"
 
   favicon_32 = "images/favicon.png"
 # favicon_16 = "/img/favicon-16x16.png"
+  gitRepo = "https://github.com/MansoorMajeed/esc.sh"
+
+  customCSS = ["/css/custom.css"]
 
   since = 2012
 
