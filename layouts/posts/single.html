@@ -28,9 +28,18 @@
           {{ with .GetTerms "authors" }}{{ partial "taxonomy/authors.html" . }}{{ end }}
           {{ with .GetTerms "categories" }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .GetTerms "tags" }}{{ partial "taxonomy/tags.html" . }}{{ end }}
+           <!-- Improve this page link -->
+          <div class="centered-improve-link">
+            {{ if .Site.Params.gitRepo }}
+            <span class="improve-link">
+              <a href="{{ .Site.Params.gitRepo }}/edit/{{ .Site.Params.gitBranch | default "main" }}/content/{{ path.Clean .File.Path }}">
+                <i class="fa fa-github"></i> Improve this page
+              </a>
+            </span>
+            {{ end }}
+          </div>
         </div>
       </header>
-
       <div class="post-content">
         {{ if .Params.featuredImage }}
           <img src="{{ .Params.featuredImage | relURL }}" alt="Featured image"/>
