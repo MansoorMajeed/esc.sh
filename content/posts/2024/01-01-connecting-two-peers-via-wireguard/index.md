@@ -118,13 +118,6 @@ Ensure the following
 - You are replacing the server's PUBLIC KEY correctly in the config file. You need to copy it from the server we generated in the previous step
 - You are replacing `Endpoint` with the server's public IP.
 
-Again, as you can see, we are configuring `AllowedIPs` to be only the server's IP we configured
-with wireguard. If you need ALL your client traffic to go through wireguard, you need to change that to
-```text
-AllowedIPs = 0.0.0.0/0
-```
-
-
 ### Server : Updating the server with client public key
 
 This is very important
@@ -232,12 +225,9 @@ PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
 rtt min/avg/max/mdev = 14.468/15.582/16.696/1.114 ms
 mansoor@debian:~$
 ```
-
 Great, that works too.
 
-
 ## [ONLY IF YOU NEED IT] Sending the client's internet traffic via Wireguard
-
 
 So far we created a "tunnel" between our local VM and a remote server.
 
