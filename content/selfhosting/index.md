@@ -6,8 +6,6 @@ draft: false
 title: Self Hosting
 url: selfhosting
 ---
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="esc.sh" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-
 ## Videos
 
 I have a YouTube video playlist for "DevOps From Scratch", which is building a foundation for any sort of
@@ -37,3 +35,4 @@ You can find all the self hosting blog posts : [/categories/selfhosting/](/categ
 - [How I expose my services to the Internet](/blog/expose-selfhosted-services-to-internet/)
 
   
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="esc.sh" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
