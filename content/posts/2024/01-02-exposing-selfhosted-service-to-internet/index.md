@@ -17,6 +17,9 @@ on a daily basis. I also use the same laptop to host some internet facing servic
 these services should be accessible to **everyone on the internet**. And this is the setup I came up with
 which seem to be a good tradeoff between cost, complexity and security.
 
+I have a YouTube video with live demo, if you are interested
+{{< youtube dfnNEn9-mLs >}}
+
 ## Common ways to expose a service to the Internet
 
 First let us take a look at some of the common ways to expose a service to the Internet

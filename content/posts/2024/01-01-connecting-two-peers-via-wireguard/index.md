@@ -17,6 +17,9 @@ In this post, I will connect a local Virtual Machine to a remote Cloud VM via Wi
 
 > Towards the end of the post, I will also show you how you can route the client's internet traffic via the CloudVM through Wireguard
 
+I have a YouTube video with live demo, if you are interested
+{{< youtube hXBvO1Yj9iQ >}}
+
 ## Connecting local machine to a remote Cloud VM
 For the sake of simplicity, let us call the Cloud VM the server and the local laptop the client.
 ## Setting up the server
