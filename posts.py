@@ -21,7 +21,7 @@ author: Mansoor
 date: {datetime.now().isoformat()}
 lastmod: {datetime.now().isoformat()}
 draft: true
-url: /blog/{date_prefix}-{title.lower().replace(' ', '-')}
+url: /blog/{title.lower().replace(' ', '-')}
 images: []
 ---
 
