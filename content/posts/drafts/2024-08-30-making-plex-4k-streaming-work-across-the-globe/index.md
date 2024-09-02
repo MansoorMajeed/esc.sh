@@ -108,6 +108,74 @@ latency based routing
 
 ### Route53 for latency / geolocation based routing
 
+> Note: For this to work, obviously, your domain needs to be managed by Route53 for DNS. However, if you already use
+> another provider, you don't really have to move the entire DNS setup for that domain to Route53. Instead, you can simply
+> delegate a subdomain to Route53. Read this Cloudflare documentation for an example [HERE](https://developers.cloudflare.com/dns/manage-dns-records/how-to/subdomains-outside-cloudflare/)
+> For example, `r53.esc.sh` can be delegated to Route53 and use Route53 to manage all subdomains below that.
+
 My plex domain is `plex.example.com`. This domain's DNS is handled by AWS Route53. Through the magic of latency based routing in AWS Route53, the domain `plex.example.com` will resolve to different IPs depending on where the client is.
+
+When we use latency based routing in Route53, it measures latency between the user and multiple endpoints and then routes the user's DNS query to the endpoint that offers the fastest response time
+
+For exammple:
+
+`plex.example.com` will resolve to `104.21.6.130` for all clients closer to that server (in this case Asia). Similarly it will resolve to `172.67.154.225` for all clients closer to it(in this case North America). 
+
+#### But why do we need to use this complicated DNS setup?
+
+In Plex, you list the server domains in an order. So you will end up with `plex-asia.example.com`, `plex-us.example.com`.
+And when a client tries to play a stream, Plex will use the first URL that is reachable. So, you see the problem. 
+
+#### But is Route53 expensive?
+
+No, it is $0.50/month per zone and then $0.60 per million queries. In my billing, it is barely above $0.5 per month
+
+#### Create a Route53 user
+
+We should also create a dedicated IAM user in AWS to use with Let's Encrypt to automate certificates. We will use this in a
+step below. Login to AWS, Go to IAM -> Users -> Create user
+
+- No need to give access to AWS management console
+- Choose `Attach policies directly`
+- Select the policy `AmazonRoute53DomainsFullAccess`
+
+> Note: This is not a great idea if you are using this Route
+
+
+### Plex setup
+
+I assume that you already have a Plex server configured and exposed to the internet. 
+I will assume that this Plex server is available at `plex-origin.example.com`, which points to your home IP address.
+If you have a different setup, like I have explained in [HERE](https://esc.sh/blog/expose-selfhosted-services-to-internet/), the idea remains the
+same. We will be proxying from an Nginx to this "Plex Origin" which connects to the plex instance in your home network.
+
+### Cloud VM configuration
+
+Now let us configure our reverse proxy VMs (aka poor man's CDN POPs)
+
+#### Configuring TLS certificates
+
+We will use Let'sEncrypt certificate to encrypt all traffic. Since you use Route53, it is very easy to get
+Letsencrypt certificates using DNS challenge.
+
+First, install the required packages
+```
+sudo apt update
+sudo apt install certbot python3-certbot-dns-route53
+```
+
+
+
+Now, under the root user, create a file `/root/.aws/credentials`. 
+
+#### The Cloud VM in us-east1
+
+Install Nginx
+```
+sudo apt update && sudo apt install nginx -y
+```
+
+And create the configuration at `/etc/nginx/sites-enabled/plex.example.com`
+
 
 
