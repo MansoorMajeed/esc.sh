@@ -40,8 +40,12 @@ style = "github-dark"
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
 
-[params.goatCounter]
-code = "esc"
+#[params.goatCounter]
+#code = "esc"
+
+[params.plausibleAnalytics]
+  domain = "esc.sh"
+  serverURL = "plaus.esc.sh"
 
 # Giscus comments
 [params.giscus] # https://giscus.app
