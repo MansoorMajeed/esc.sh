@@ -26,11 +26,7 @@ It is a static site generated using Hugo. The source of the blog is a [public gi
 I use Github Actions to build and publish the site to Github Pages.
 
 ### Privacy
-I don't run any ads in this site. I use Cloudflare to serve the site and use [GoatCounter](https://www.goatcounter.com/) to host a simple
-analytics service to count the number of visitors. I don't share it with anyone (I don't know if anyone even would be interested in that :/)
-I don't even look at it myself ever.
+I don't run any ads in this site. I use Cloudflare to serve the site and use a self hosted Plausible instance to host a simple
+analytics service to count the number of visitors. I don't share it with anyone (I don't even look at it myself most of the time)
 
-If you do not wish to be tracked in any way, use Privacy Badger (which should block the Cloudflare tracker) and add `https://sta.esc.sh/count.js` to your adblocker block list.
-
-
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="esc.sh" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+If you do not wish to be tracked in any way, use Privacy Badger (which should block the Cloudflare tracker) and add `https://plaus.esc.sh/js/script.js` to your adblocker block list.

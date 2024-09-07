@@ -165,7 +165,6 @@ sudo apt install certbot python3-certbot-dns-route53
 ```
 
 
-
 Now, under the root user, create a file `/root/.aws/credentials`. 
 
 #### The Cloud VM in us-east1
