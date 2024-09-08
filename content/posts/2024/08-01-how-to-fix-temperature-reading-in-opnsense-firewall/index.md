@@ -5,6 +5,7 @@ author: Mansoor
 date: 2024-08-01T15:46:29.969619
 lastmod: 2024-08-01T15:46:29.969629
 draft: false
+categories: ["SelfHosting"]
 url: /blog/fix-temperature-reading-opnsense
 images: []
 ---
