@@ -98,7 +98,7 @@ It is very straight forward. Two VMs in the two geographic regions running Nginx
 ### Route53 for latency based routing
 
 > Note: For this to work, your domain needs to be managed by Route53 for DNS. However, if you already use another provider, you don't really have to move the entire DNS setup for that domain to Route53. Instead, you can simply delegate a subdomain to Route53. Read this Cloudflare documentation for an example [HERE](https://developers.cloudflare.com/dns/manage-dns-records/how-to/subdomains-outside-cloudflare/)
-> For example, `subdomain.esc.sh` can be delegated to Route53 and use Route53 to manage all subdomains below that while continuing to use the existing DNS provider for all the existing DNS records. You can choose whatever is more convenient to you.
+> For example, `demo.esc.sh` can be delegated to Route53 and use Route53 to manage all subdomains below that while continuing to use the existing DNS provider for all the existing DNS records. You can choose whatever is more convenient to you.
 
 My plex domain is `plex.example.com`. This domain's DNS is handled by AWS Route53. Through the magic of latency based routing in AWS Route53, the domain `plex.example.com` will resolve to the IP that is closer to the client that is making the DNS request. You can read more about it in AWS documentation [HERE](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-latency.html)
 
@@ -220,19 +220,21 @@ Now let us configure our reverse proxy VMs (aka poor man's CDN POPs).
 
 #### Domains we will use
 
-We will have three domain names for Plex
+This is an overview of the domain names involved
 
-- `plex.example.com` : This is our main domain for plex. We will have two records pointing to two VMs
+> Note: Make sure to create the remaining DNS records. These are `Simple routing` records
+
+- `plex.example.com` : This is our main domain for plex. We have two A records pointing to two VMs
 - `plex-us.example.com` : Static DNS record pointing to the VM in the US
 - `plex-asia.example.com` : Static DNS record pointing to the VM in Asia
 - `plex-origin.example.com` : The IP of wherever your Plex server is. This is usually your dynamic DNS if hosting on your home network
 
 #### Configuring TLS certificates
 
-We will use Let'sEncrypt certificate to encrypt all traffic. Since you use Route53, it is very easy to get Letsencrypt certificates using DNS challenge.
+We will use Let'sEncrypt to encrypt all traffic. Since you use Route53, it is very easy to get Letsencrypt certificates using DNS challenge.
 
 First, install the required packages on both the VMs.
-```
+```bash
 sudo apt update
 sudo apt install certbot python3-certbot-dns-route53 nginx
 ```
@@ -240,7 +242,7 @@ sudo apt install certbot python3-certbot-dns-route53 nginx
 Now, under the root user, create a file `/root/.aws/credentials`. Populate it with the credentials from the csv file we downloaded in the previous step.
 
 It should look something like this. 
-```
+```text
 root@server-us:~# cat /root/.aws/credentials
 [default]
 aws_access_key_id = AKIAxxxxxxxxxxxx
@@ -258,7 +260,7 @@ With the credentials in place, we are ready to get our TLS certificates.
 
 **On both the VMs**
 We need to get the `plex.example.com` certificate on both the VMs
-```
+```bash
 sudo certbot certonly --dns-route53 -d plex.example.com
 ```
 Follow the prompts. If you have correctly configured the Route53 credentials, it should work
@@ -266,9 +268,11 @@ Follow the prompts. If you have correctly configured the Route53 credentials, it
 **On the US VM**
 
 The VM in asia needs to connect to the VM in US via TLS. So, we also need the `plex-us.example.com` domain.
-```
+```bash
 sudo certbot certonly --dns-route53 -d plex-us.example.com
 ```
+
+> Note: We don't need the plex-asia.example.com certs because no one will be connecting to that domain
 
 #### Configuring Nginx - US VM
 
@@ -337,7 +341,7 @@ server {
 
 > Note: Please read this
 
-- Ensure `plex.example.com` is replaced with your correct domain name that use withing Plex.
+- Ensure `plex.example.com` is replaced with your correct domain name that use within Plex.
 - Ensure `plex-origin.example.com` is replaced with the correct domain for your home IP, or wherever plex is hosted. Note that I am using `https` here, so you need to ensure that your home IP has TLS as well. If you have a wireguard/tunnel from your home network to this VM, then you can replace the `https://plex-origin.example.com;` with your address like `http://10.1.0.3:32400` for example. You get the idea
 
 
@@ -456,7 +460,7 @@ server {
 #### Test Nginx on both VM
 
 Run this command to verify that Nginx syntax is correct
-```
+```bash
 sudo nginx -t
 ```
 
@@ -465,7 +469,7 @@ If you see any errors, fix them. Make sure the domain names and certificate path
 #### Start Nginx
 
 If the config is fine, run
-```
+```bash
 sudo systemctl restart nginx
 ```
 
