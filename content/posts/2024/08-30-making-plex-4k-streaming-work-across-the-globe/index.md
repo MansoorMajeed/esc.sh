@@ -1,11 +1,11 @@
 ---
-title: "Making Plex 4k streaming work across the globe"
+title: "Plex 4K Streaming and Cross-Continent Playback: Making It Work"
 description: ""
 author: Mansoor
 date: 2024-08-30T23:34:35.840888
 lastmod: 2024-08-30T23:34:35.841289
 draft: true
-url: /blog/plex-4k-streaming-across-the-globe
+url: /blog/plex-cross-continent-4k-streaming
 images: []
 ---
 ## Background
