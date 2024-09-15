@@ -2,3 +2,8 @@
     text-align: center;
     margin-top: 15px;
 }
+
+.post-meta .page-views {
+    margin-left: 15px;
+    display: inline-block;
+}

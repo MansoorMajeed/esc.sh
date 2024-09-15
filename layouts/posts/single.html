@@ -24,6 +24,10 @@
               <i class="fa fa-clock-o" aria-hidden="true"></i>
               {{ i18n "reading_time" .ReadingTime }}
             </span>
+            <span class="page-views">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+              {{ partial "page_views.html" . }}
+            </span>
           </div>
           {{ with .GetTerms "authors" }}{{ partial "taxonomy/authors.html" . }}{{ end }}
           {{ with .GetTerms "categories" }}{{ partial "taxonomy/categories.html" . }}{{ end }}

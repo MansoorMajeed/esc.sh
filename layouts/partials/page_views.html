@@ -1,0 +1,23 @@
+<span id="{{ .File.UniqueID }}" title="{{ i18n "article.page_views" }}">
+</span>
+
+
+<script>
+
+    var r = new XMLHttpRequest();
+
+    r.addEventListener('load', function() {
+
+        var response = JSON.parse(this.responseText);
+
+        console.log(response);
+        document.getElementById('{{ .File.UniqueID }}').innerText = response.pageviews + ' {{ i18n "article.page_views" }}';
+    });
+
+    // Construct the request URL for the plausible proxy
+    var pageUrl = encodeURIComponent('{{ .RelPermalink }}'.replace(/(\/)?$/, ''));
+    var apiUrl = "https://plaus.esc.sh/pageviews?page=" + pageUrl;
+
+    r.open('GET', apiUrl);
+    r.send();
+</script>
