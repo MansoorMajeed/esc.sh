@@ -115,9 +115,9 @@ style = "github-dark"
 
 
 [[menu.main]]
-  name = "Travel"
+  name = "Life"
   weight = 700
-  url  = "travel/"
+  url  = "https://life.esc.sh"
 
 [[menu.main]]
   name = "About"
