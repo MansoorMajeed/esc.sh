@@ -10,4 +10,5 @@ images: []
 ---
 
 apt install python3-certbot-dns-cloudflare
+apt install certbot python3-certbot-dns-route53
 certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/.cloudflare-cred.ini -d over.ex.digitz.org
