@@ -95,7 +95,7 @@ style = "github-dark"
 [[menu.main]]
   name = "Self Hosting"
   weight = 50
-  url = "selfhost.esc.sh"
+  url = "https://selfhost.esc.sh"
 
 
 [[menu.main]]
