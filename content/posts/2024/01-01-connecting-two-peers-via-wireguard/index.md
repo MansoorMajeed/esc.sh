@@ -13,7 +13,7 @@ In this post, I will show you how we can connect two peers (any two servers/inst
 As long as at least one of the peer is able to connect directly to the other one, this should work
 even if one of the peer is behind a NAT/firewall that blocks incoming connections.
 
-In this post, I will connect a local Virtual Machine to a remote Cloud VM via Wireguard.
+For this demonstration, I will connect a local Virtual Machine to a remote Cloud VM via Wireguard.
 
 > Towards the end of the post, I will also show you how you can route the client's internet traffic via the CloudVM through Wireguard
 
