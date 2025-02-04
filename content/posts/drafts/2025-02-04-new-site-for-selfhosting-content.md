@@ -29,5 +29,5 @@ Don't get me wrong, as an engineer, I work with Markdown and the terminal on a d
 ### The Hugo Workflow
 
 So here is 
-I realized that even the thought of having to open my text editor, run some scripts to create a new draft post, write stuff, copy images, link them, build it, see the local site looks good, then push to git, once the site is built and published (through cklo)
+open my text editor, run some scripts to create a new draft post, write stuff, copy images, link them, build it, see the local site looks good, then push to git, once the site is built and published (through cklo)
 
