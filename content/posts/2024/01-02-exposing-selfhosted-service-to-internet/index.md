@@ -9,6 +9,13 @@ url: blog/expose-selfhosted-services-to-internet
 categories: ["SelfHosting"]
 images: []
 ---
+## Update
+
+Since writing this post, I have been using Cloudflare tunnel for exposing some of the services. If you are hosting mostly public facing websites, I recommend you try out Cloudflare tunnel.
+
+[Here is my write up on using Cloudflare tunnel](https://selfhost.esc.sh/cloudflare-tunnel/)
+
+If you are hosting something like Plex, I still think the below method is the best option, so read on!
 
 ## My Setup
 
