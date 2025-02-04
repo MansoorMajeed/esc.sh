@@ -3,7 +3,7 @@ title: "How I expose my Selfhosted services to the Internet"
 description: "In this post I explain how I expose the services that are hosted on my local network on a laptop to the Internet so that it is publicly accessible in a safe manner"
 author: Mansoor
 date: 2024-01-02T07:32:37-04:00
-lastmod: 2024-01-02T07:32:37-04:00
+lastmod: 2025-02-03T07:32:37-04:00
 draft: false
 url: blog/expose-selfhosted-services-to-internet
 categories: ["SelfHosting"]
