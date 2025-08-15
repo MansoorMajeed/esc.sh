@@ -1,5 +1,6 @@
 # Esc.sh Blog Source
 
+> Note: I do not use Hugo anymore, I have migrated my [blog](https://blog.esc.sh) to use Ghost running on my own servers. I think I am getting old for manual Markdown and I appreciate the rich editing experience of Ghost 
 
 ## Set up locally
 
